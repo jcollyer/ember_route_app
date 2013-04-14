@@ -25,6 +25,18 @@ function sectionRoute(name) {
   });
 }
 
+function communityRoute(name) {
+  return Ember.Route.extend({
+    route: name,
+    connectOutlets: function(router, context) {
+      var CommunityView = Ember.View.extend({
+        templateName: 'community' + name
+      });
+      router.get('communityController').connectOutlet({viewClass: CommunityView});
+    }
+  });
+}
+
 // A helper function to define a property used to render the navigation. Returns
 // true if a state with the specified name is somewhere along the current route.
 function stateFlag(name) {
@@ -46,7 +58,14 @@ window.App = Ember.Application.create({
   ApplicationController: Ember.Controller.extend({
     isHome: stateFlag('home'),
     isSections: stateFlag('sections'),
-    isItems: stateFlag('items')
+    isCommunity: stateFlag('community'),
+    isItems: stateFlag('items'),
+    isProgram: stateFlag('programs'),
+    isProgram: stateFlag('about'),
+    isProgram: stateFlag('news'),
+    isProgram: stateFlag('donate'),
+    isProgram: stateFlag('store'),
+    isContact: stateFlag('contact')
   }),
   ApplicationView: Ember.View.extend({
     templateName: 'application'
@@ -63,8 +82,23 @@ window.App = Ember.Application.create({
     isSectionC: stateFlag('sectionC'),
     isSectionD: stateFlag('sectionD')
   }),
+
+  CommunityController: Ember.Controller.extend({
+    isSectionA: stateFlag('sectionA'),
+    isSectionB: stateFlag('sectionB'),
+    isSectionC: stateFlag('sectionC'),
+    isSectionD: stateFlag('sectionD'),
+    isSectionD: stateFlag('sectionE'),
+    isSectionD: stateFlag('sectionF'),
+    isSectionD: stateFlag('sectionG')
+  }),
+
   SectionsView: Ember.View.extend({
     templateName: 'sections'
+  }),
+
+  CommunityView: Ember.View.extend({
+    templateName: 'community'
   }),
 
   ItemsView: Ember.View.extend({
@@ -76,6 +110,37 @@ window.App = Ember.Application.create({
     templateName: 'item'
   }),
 
+  ContactController: Ember.Controller.extend(),
+  ContactView: Ember.View.extend({
+    templateName: 'contact'
+  }),
+
+  AboutController: Ember.Controller.extend(),
+  AboutView: Ember.View.extend({
+    templateName: 'about'
+  }),
+
+  NewsController: Ember.Controller.extend(),
+  NewsView: Ember.View.extend({
+    templateName: 'news'
+  }),
+
+  DonateController: Ember.Controller.extend(),
+  DonateView: Ember.View.extend({
+    templateName: 'donate'
+  }),
+
+  StoreController: Ember.Controller.extend(),
+  StoreView: Ember.View.extend({
+    templateName: 'store'
+  }),
+
+  ProgramsController: Ember.Controller.extend(),
+  ProgramsView: Ember.View.extend({
+    templateName: 'programs'
+  }),
+
+
   Router: Ember.Router.extend({
     root: Ember.Route.extend({
       doHome: function(router, event) {
@@ -84,13 +149,70 @@ window.App = Ember.Application.create({
       doSections: function(router, event) {
         router.transitionTo('sections.index');
       },
+      doCommunity: function(router, event) {
+        router.transitionTo('community.index');
+      },
       doItems: function(router, event) {
         router.transitionTo('items.index');
+      },
+      doPrograms: function(router, event) {
+        router.transitionTo('programs');
+      },
+      doContact: function(router, event) {
+        router.transitionTo('contact');
+      },
+      doAbout: function(router, event) {
+        router.transitionTo('about');
+      },
+      doNews: function(router, event) {
+        router.transitionTo('news');
+      },
+      doDonate: function(router, event) {
+        router.transitionTo('donate');
+      },
+      doStore: function(router, event) {
+        router.transitionTo('store');
       },
       home: Ember.Route.extend({
         route: '/',
         connectOutlets: function(router, event) {
           router.get('applicationController').connectOutlet('home');
+        }
+      }),
+      programs: Ember.Route.extend({
+        route: '/programs',
+        connectOutlets: function(router, event) {
+          router.get('applicationController').connectOutlet('programs');
+        }
+      }),
+      about: Ember.Route.extend({
+        route: '/about',
+        connectOutlets: function(router, event) {
+          router.get('applicationController').connectOutlet('about');
+        }
+      }),
+      news: Ember.Route.extend({
+        route: '/news',
+        connectOutlets: function(router, event) {
+          router.get('applicationController').connectOutlet('news');
+        }
+      }),
+      donate: Ember.Route.extend({
+        route: '/donate',
+        connectOutlets: function(router, event) {
+          router.get('applicationController').connectOutlet('donate');
+        }
+      }),
+      store: Ember.Route.extend({
+        route: '/store',
+        connectOutlets: function(router, event) {
+          router.get('applicationController').connectOutlet('store');
+        }
+      }),
+      contact: Ember.Route.extend({
+        route: '/contact',
+        connectOutlets: function(router, event) {
+          router.get('applicationController').connectOutlet('contact');
         }
       }),
       sections: Ember.Route.extend({
@@ -109,6 +231,29 @@ window.App = Ember.Application.create({
         sectionC: sectionRoute('C'),
         doSectionD: function(router, event) { router.transitionTo('sections.sectionD'); },
         sectionD: sectionRoute('D')
+      }),
+      community: Ember.Route.extend({
+        route: '/community',
+        connectOutlets: function(router, event) {
+          router.get('applicationController').connectOutlet('community');
+        },
+        index: Ember.Route.extend({
+          route: '/'
+        }),
+        doCommunityA: function(router, event) { router.transitionTo('community.communityA'); },
+        communityA: communityRoute('A'),
+        doCommunityB: function(router, event) { router.transitionTo('community.communityB'); },
+        communityB: communityRoute('B'),
+        doCommunityC: function(router, event) { router.transitionTo('community.communityC'); },
+        communityC: communityRoute('C'),
+        doCommunityD: function(router, event) { router.transitionTo('community.communityD'); },
+        communityD: communityRoute('D'),
+        doCommunityE: function(router, event) { router.transitionTo('community.communityE'); },
+        communityE: communityRoute('E'),
+        doCommunityF: function(router, event) { router.transitionTo('community.communityF'); },
+        communityF: communityRoute('F'),
+        doCommunityG: function(router, event) { router.transitionTo('community.communityG'); },
+        communityG: communityRoute('G')
       }),
       items: Ember.Route.extend({
         route: '/items',
