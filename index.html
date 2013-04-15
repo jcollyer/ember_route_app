@@ -51,7 +51,7 @@
           <ul id="topNav">  
           <li class="home" {{bindAttr class="isHome:active"}}><a {{action "doHome"}} class="button">Home</a></li>
           <li class="sections" {{bindAttr class="isSections:active"}}><a {{action "doContact"}} class="button">Contact</a></li>
-          <li class="items" {{bindAttr class="isItems:active"}}><a {{action "doItems"}} class="button">Store</a></li>
+          <li class="store" {{bindAttr class="isStore:active"}}><a {{action "doStore"}} class="button">Store</a></li>
           </ul>       
         </div>
         <div id="logoBox">
@@ -92,61 +92,76 @@
             <ul>
               <li class="sections" {{bindAttr class="isSections:active"}}>
                 <a {{action "doSections"}}>Programs</a>
-                <ul>
-                  <li>
-                    <a href="programs.php#programsLink1">Education</a>
-                  </li>
-                  <li>
-                    <a href="programs.php#programsLink2">Clean Water</a>
-                  </li>
-                  <li>
-                    <a href="programs.php#programsLink3">Sports</a>       
-                  </li>
-                </ul>
               </li>
               <li class="community" {{bindAttr class="isCommunity:active"}}>
                 <a {{action "doCommunity"}}>Community</a>
-                <ul>
-                  <li>
-                    <a {{action "doHome"}}>Newsletters</a>
-                    <ul>
-                      <li><a href="community.php#communityLink10">March 2013</a></li>
-                      <li><a href="community.php#communityLink9">December 2012</a></li>
-                      <li><a href="community.php#communityLink8">September 2012</a></li>
-                      <li><a href="community.php#communityLink7">July 2012</a></li>
-                      <li><a href="community.php#communityLink1">June 2012</a></li>
-                      <li><a href="community.php#communityLink4">December 2012</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="community.php#activities_link">activities</a>
-                    <ul>
-                      <li><a href="community.php#communityLink2">YBFC February</a></li>
-                      <li><a href="community.php#communityLink3">YBFC January</a></li>
-                      <li><a href="community.php#communityLink5">Youth Activity</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="community.php#communityLink6">plan event</a>
-                  </li>
-                </ul>
               </li>
-              <li>
-                <a {{action "doHome"}}>about</a>
+              <li class="about" {{bindAttr class="isAbout:active"}}>
+                 <a {{action "doAbout"}}>About</a>
               </li>
-              <li>
-                <a {{action "doHome"}}>news&media</a>
-              </li> 
-              <li>
-                <a {{action "doHome"}}>donate</a>
+              <li class="news" {{bindAttr class="isNews:active"}}>
+                 <a {{action "doNews"}}>News&Media</a>
+              </li>
+              <li class="donate" {{bindAttr class="isDonate:active"}}>
+                 <a {{action "doDonate"}}>Donate</a>
               </li>
             </ul>
-          </div>
+          </div> 
 
-      <section>
+      <section class="clearfix">
         {{outlet}}
+        <br /> 
       </section>
 
+    
+      <footer>
+        <div id="footer_social">
+          <div class="socialStuff">
+            <div id="footer_social_div">
+            <div class="socialButtons">
+              <div class="socialIcon">
+                <a href="https://www.facebook.com/pages/Plant-A-Seed/190180901003258" alt="facebook link"><img src="img/facebookLink.png" /></a>
+              </div>
+              <div class="socialIcon facebook">
+                <a href="https://www.facebook.com/groups/plantaseed/"><img class="facebookGroup" src="img/facebookGroupLink.png" /></a>
+              </div>
+              <div class="socialIcon">
+                <a href="http://twitter.com/#!/plantaseedafric"  alt="twitter link" ><img src="img/twitterLink.png" /></a>
+              </div>
+              <div class="socialIcon">
+                <a href="http://www.linkedin.com/company/plant-a-seed-africa?trk=fc_badge"><img src="img/linkedinLink.png" /></a>
+              </div>
+              <div class="socialIcon">
+                <a href="http://boldleaders.ning.com/profile/RuthAkumbu"><img src="img/boldleadersLink.png" /></a>
+              </div>
+              <div class="socialIcon">
+                <a href="http://www.youtube.com/user/Plantaseedafrica"><img src="img/youtubeLink.png" /></a>
+              </div>
+            </div>
+            <div class="fb-like" data-href="http://plantaseedafrica.org" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false"></div>
+            <div class="socialIcon paypal">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="D4VLCCRQCUPXJ">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+            </div>
+          </div>
+        </div>
+        </div>
+        <ul id="footer_list">
+          <li><a {{action "doSections"}}>Programs</a></li>
+          <li><a {{action "doCommunity"}}>Community</a></li>
+          <li><a {{action "doAbout"}}>About Us</a></li>
+          <li><a {{action "doNews"}}>News & Media</a></li>
+          <li><a {{action "doDonate"}}>Donate</a></li>
+          <li><a {{action "doStore"}}>store</a></li>
+          <li><a {{action "doContact"}}>contact</a></li>
+          <li><a class="top" href="#"><b>top</b></a></li>
+          <li>&copy;Plant a Seed 2012</li>
+        </ul>
+      </footer>
     </script>
     
     <script type="text/x-handlebars" data-template-name="home">
@@ -247,7 +262,8 @@
           <div id="colomn_right" class="clearfix">
             <h4 style="margin-left:7%">Community</h4>
             <div class="article_home clearfix">
-              <a class="noLine" href="community.php#communityLink10"> 
+
+              <a {{action "doCommunityA"}} class="noLine"> 
               <img src="img/cameroon-kids.jpg" class="picFrame leftFloat" />
               <h3>March Newsletter</h3>
               <p class="date">Thursday March 7, 2013</p>
@@ -307,26 +323,26 @@
       </div>
     </script>
 
-    <script type="text/x-handlebars" data-template-name="contact">
-      <h2>this is the contact page</h2>
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="programs">
-      <h2>this is the programs page</h2>
-    </script>
-
     <script type="text/x-handlebars" data-template-name="sections">
       <div class="blackBox">
         <h5 class="whiteText">programs</h5>
         <p class="whiteText">What we do at Plant a Seed is divided into three programs: <b>education</b>, <b>clean water</b>, and <b>sports</b>.</p>
       </div>
+
+      <div class="np_container">
           <ul class ="nav nav-pills">
-            <li class="sectionA" {{bindAttr class="isSectionA:active"}}><a {{action "doSectionA"}}>Section A</a></li>
-            <li class="sectionB" {{bindAttr class="isSectionB:active"}}><a {{action "doSectionB"}}>Section B</a></li>
-            <li class="sectionC" {{bindAttr class="isSectionC:active"}}><a {{action "doSectionC"}}>Section C</a></li>
-            <li class="sectionD" {{bindAttr class="isSectionD:active"}}><a {{action "doSectionD"}}>Section D</a></li>
+            <li class="sectionA" {{bindAttr class="isSectionA:active"}}><a {{action "doSectionA"}}>Education</a></li>
+            <li class="sectionB" {{bindAttr class="isSectionB:active"}}><a {{action "doSectionB"}}>Clean Water</a></li>
+            <li class="sectionC" {{bindAttr class="isSectionC:active"}}><a {{action "doSectionC"}}>Sports</a></li>
           </ul>
-      {{outlet}}
+          <div class="header_look">
+            <h5>Check out our Programs!</h5>
+          </div>
+          <div class="np_view">
+            {{outlet}}
+          </div>
+      </div>
+
     </script>
 
 
@@ -335,304 +351,301 @@
         <h5 class="whiteText">Community</h5>
         <p class="whiteText">With your help, we are reaching out to our communities planting seeds of hope, change and opportunity.</p>
       </div>
+      <div class="np_container">
           <ul class ="nav nav-pills">
-            <li class="communityA" {{bindAttr class="isCommunityA:active"}}><a {{action "doCommunityA"}}>Community A</a></li>
-            <li class="communityB" {{bindAttr class="isCommunityB:active"}}><a {{action "doCommunityB"}}>Community B</a></li>
-            <li class="communityC" {{bindAttr class="isCommunityC:active"}}><a {{action "doCommunityC"}}>Community C</a></li>
-            <li class="communityD" {{bindAttr class="isCommunityD:active"}}><a {{action "doCommunityD"}}>Community D</a></li>
-            <li class="communityE" {{bindAttr class="isCommunityE:active"}}><a {{action "doCommunityE"}}>Community E</a></li>
-            <li class="communityF" {{bindAttr class="isCommunityF:active"}}><a {{action "doCommunityF"}}>Community F</a></li>
-            <li class="communityG" {{bindAttr class="isCommunityG:active"}}><a {{action "doCommunityG"}}>Community G</a></li>
+            <li class="communityA" {{bindAttr class="isCommunityA:active"}}><a {{action "doCommunityA"}}>March Newsletter</a></li>
+            <li class="communityB" {{bindAttr class="isCommunityB:active"}}><a {{action "doCommunityB"}}>December Newsletter</a></li>
+            <li class="communityC" {{bindAttr class="isCommunityC:active"}}><a {{action "doCommunityC"}}>September Newsletter</a></li>
+            <li class="communityD" {{bindAttr class="isCommunityD:active"}}><a {{action "doCommunityD"}}>July Newsletter</a></li>
+            <li class="communityE" {{bindAttr class="isCommunityE:active"}}><a {{action "doCommunityE"}}>June Newsletter</a></li>
+            <li class="communityF" {{bindAttr class="isCommunityF:active"}}><a {{action "doCommunityF"}}>Activities</a></li>
+            <li class="communityG" {{bindAttr class="isCommunityG:active"}}><a {{action "doCommunityG"}}>Plan Event</a></li>
           </ul>
-
-    <div id="section_body">
-      <div class="mission">
-        {{outlet}} 
-      </div>
-    </div>
+          <div class="header_look">
+            <h5>Check out our Community!</h5>
+          </div>
+          <div class="np_view">
+            {{outlet}} 
+          </div>
+        </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="sectionA">
-      <div class="mission">
-              <div class="draw1">&nbsp;</div>
-              <img src="img/programsPic1.jpg" class="picFrame rightFloat topMargin" />
-              <h4>Education</h4>
-              <p>Many children do not get the opportunity to go to or finish school because their family cannot afford it. For those who do attend school, most cannot afford the tools with which to study such as ministry-approved text books and workshop equipment for technical school students. Some can’t even afford pens, or notebooks. Those who get to go and actually graduate cannot compete with students around the world who have all these resources including online resources at their disposal and can read extensively on a subject before forming an opinion. In this day and age, it is important that all students read extensively on a variety of subjects and view points as the world is quickly changing and globalizing. Think again of those who cannot afford to go to school at all. This is a terrible handicap for a country.   Imagine a kid without education thirty years from now.  Now, imagine a village of those same kids thirty years from now. Finally, imagine a whole country filled with those villages.</p>
-              <br />
-              <p class="smallText">"This can’t wait any longer so we are making Education our main focus and hope that you will join us. Here are some areas you can help with"</p>
-              <div class="missionBottomBorder"></div>
-            </div>
-            <div class="mission clearfix">
-              <img src="img/programsPic2.jpg" class="picFrame rightFloat topMargin" />
-              <h6>Youth activities And Book Drive</h6>
-              <p>This is a yearly project we have sponsored for over 10 years to encourage, motivate and support kids and their parents right before the school year. We host games and other activities and at the end give all participants note books, pens, pencils and cash prices that will go towards their education. Sometime the parents participate and take home prices for their young kids who are not able to participate in the games. Check out our Media link for videos: ADD Pictures. Click on the <a href="donate.php" class="button">donation</a> button to make a donation. Please specify Book Drive in the comment area.</p>
-              <br /><br /><br />
-            </div>
-            <div class="mission clearfix">
-            <div class="draw2">&nbsp;</div>
-              <img src="img/aboutPic1.jpg" class="picFrame rightFloat topMargin" />
-              <h6>Sponsor a Child</h6>
-              <p>Some of the fun things about our Sponsor A Child program is your kids get to correspond with the kids you (or your kids) are sponsoring. We encourage parents to get their kids involved in raising the funds for sponsorship. Imagine if by the time your kid graduates high school they have already help put another kid their age through school. I don’t know about you but I will be mighty happy!</p>
-              <br />
-              <p>You do not have to be a parent to sponsor a child. If you will like to sponsor and correspond with a child, please <a href="contact.php" class="button">contact us</a> </p>
-              
-              <table class="sponsorChildTable">
-                <tr>
-                  <td><img class="picFrame"  src="img/sponsorChild3.jpg" /></td>
-                  <td>Aliyu Miriamu is 13 with no arms. Her parents have managed to put her through elementary school in a special needs school where she has learned to use her toes to write and take care of her basic needs. Her father came to Plant A Seed for assistance with her secondary school education. In her father’s words, “I feel bad to drop this child from school. She will become useless and miserable”. She also needs a sponsor.</td>
-                </tr>
-                <tr>  
-                  <td><img class="picFrame"  src="img/sponsorChild4.jpg" /></td>
-                  <td>Asongwe Titus is 10 years old in Class 4 (4rd Grade). His father died a few years ago. Titus is a sickle cell patient which alone is costly for a single mother in Africa. He has three other siblings and his mother can only afford to keep one of them in school. Plant A Seed was able to keep Titus in school for the second consecutive year.</td>          </tr>
-                </tr>
-                <tr>
-                  <td><img class="picFrame"  src="img/shembom_solange.jpg" /></td>
-                  <td>Shembom Solange: 18 years, form 4. She takes care of herself and her education. She came to Plant A Seed because she got in an accident on her way to buy goods for her small business. She sells small food items during the summer to pay for her school needs and also by participating in the Plant A Seed Youth Activities and Book Drive. Unfortunately, she got in a car accident at the beginning of the summer on her way to buy her merchandize. All the money she had for the business was used to pay her hospital bills. As a result of this accident, she not only lost her capital for business, but also she could not participate as a handball player at the Plant A Seed Youth Activities and Book Drive where she usually wins a cash price and takes home notebooks, pens, pencils and rulers to help with her expenses for the school year. She hopes you will help her through this year and possibly the years to come so she can complete her education and become an Accountant.</td>         </tr>
-                </tr>
-                <tr>
-                  <td><img class="picFrame"  src="img/sponsorChild2.jpg" /></td>
-                  <td>Firdawsi is 15 years old. She is an orphan and lives with her grandmother. We started helping Firdawsi in October, a month after the school year had started. One of our volunteers found her crying because all of her friends were in school and she wasn’t. In most village families, a girl’s education is not a priority. She is now in Form 2 thanks to those who donated last year. We hope you will help us keep her in school this year also.</td>         </tr>
-                </tr>
-                <tr>
-                  <td><img class="picFrame"  src="img/hassan_adulia.jpg" /></td>
-                  <td>Hassan Adulia: 12 years, class 5. Guardian: grandmother. Occupation: Farming</td>
-                </tr>
-                <tr>
-                  <td><img class="picFrame"  src="img/boris_wuwi.jpg" /></td>
-                  <td>Wuwih Boris Bigah: 13 years, Form 1. Guardian: Auntie. Occupation: Farming</td>
-                </tr>
-                <tr>
-                  <td><img class="picFrame"  src="img/phungeh_favour.jpg" /></td>
-                  <td>Phungeh Favour: 4 years, class 2. Guardian: mother. Occupation: PTA (PTAs makes less than $30 a month in the villages)</td>
-                </tr>
-                <tr>
-                  <td><img class="picFrame"  src="img/maqondo_chia.jpg" /></td>
-                  <td>Maqondo Chia: 10 years, class 4. Guardian: mother. Occupation: Farming</td>
-                </tr>
-                <tr>
-                  <td><img class="picFrame"  src="img/magmi_zita.jpg" /></td>
-                  <td>Magmi Zita: 9 years, class 4. Guardian: sister. Occupation: Farming</td>
-                </tr>
-              </table>
-              <br /><br />
+      <div class="draw1">&nbsp;</div>
+      <img src="img/programsPic1.jpg" class="picFrame rightFloat topMargin" />
+      <h4>Education</h4>
+    <div class="mission2 clearfix">
+      <p>Many children do not get the opportunity to go to or finish school because their family cannot afford it. For those who do attend school, most cannot afford the tools with which to study such as ministry-approved text books and workshop equipment for technical school students. Some can’t even afford pens, or notebooks. Those who get to go and actually graduate cannot compete with students around the world who have all these resources including online resources at their disposal and can read extensively on a subject before forming an opinion. In this day and age, it is important that all students read extensively on a variety of subjects and view points as the world is quickly changing and globalizing. Think again of those who cannot afford to go to school at all. This is a terrible handicap for a country.   Imagine a kid without education thirty years from now.  Now, imagine a village of those same kids thirty years from now. Finally, imagine a whole country filled with those villages.</p>
+      <br />
+      <p class="smallText">"This can’t wait any longer so we are making Education our main focus and hope that you will join us. Here are some areas you can help with"</p>
+      <div class="missionBottomBorder"></div>
+    </div>
+    <div class="mission2 clearfix">
+      <img src="img/programsPic2.jpg" class="picFrame rightFloat topMargin" />
+      <h6>Youth activities And Book Drive</h6>
+      <p>This is a yearly project we have sponsored for over 10 years to encourage, motivate and support kids and their parents right before the school year. We host games and other activities and at the end give all participants note books, pens, pencils and cash prices that will go towards their education. Sometime the parents participate and take home prices for their young kids who are not able to participate in the games. Check out our Media link for videos: ADD Pictures. Click on the <a href="donate.php" class="button">donation</a> button to make a donation. Please specify Book Drive in the comment area.</p>
+      <br /><br /><br />
+    </div>
+    <div class="mission2 clearfix">
+    <div class="draw2">&nbsp;</div>
+      <img src="img/aboutPic1.jpg" class="picFrame rightFloat topMargin" />
+      <h6>Sponsor a Child</h6>
+      <p>Some of the fun things about our Sponsor A Child program is your kids get to correspond with the kids you (or your kids) are sponsoring. We encourage parents to get their kids involved in raising the funds for sponsorship. Imagine if by the time your kid graduates high school they have already help put another kid their age through school. I don’t know about you but I will be mighty happy!</p>
+      <br />
+      <p>You do not have to be a parent to sponsor a child. If you will like to sponsor and correspond with a child, please <a href="contact.php" class="button">contact us</a> </p>
+      
+      <table class="sponsorChildTable">
+        <tr>
+          <td><img class="picFrame"  src="img/sponsorChild3.jpg" /></td>
+          <td>Aliyu Miriamu is 13 with no arms. Her parents have managed to put her through elementary school in a special needs school where she has learned to use her toes to write and take care of her basic needs. Her father came to Plant A Seed for assistance with her secondary school education. In her father’s words, “I feel bad to drop this child from school. She will become useless and miserable”. She also needs a sponsor.</td>
+        </tr>
+        <tr>  
+          <td><img class="picFrame"  src="img/sponsorChild4.jpg" /></td>
+          <td>Asongwe Titus is 10 years old in Class 4 (4rd Grade). His father died a few years ago. Titus is a sickle cell patient which alone is costly for a single mother in Africa. He has three other siblings and his mother can only afford to keep one of them in school. Plant A Seed was able to keep Titus in school for the second consecutive year.</td>          </tr>
+        </tr>
+        <tr>
+          <td><img class="picFrame"  src="img/shembom_solange.jpg" /></td>
+          <td>Shembom Solange: 18 years, form 4. She takes care of herself and her education. She came to Plant A Seed because she got in an accident on her way to buy goods for her small business. She sells small food items during the summer to pay for her school needs and also by participating in the Plant A Seed Youth Activities and Book Drive. Unfortunately, she got in a car accident at the beginning of the summer on her way to buy her merchandize. All the money she had for the business was used to pay her hospital bills. As a result of this accident, she not only lost her capital for business, but also she could not participate as a handball player at the Plant A Seed Youth Activities and Book Drive where she usually wins a cash price and takes home notebooks, pens, pencils and rulers to help with her expenses for the school year. She hopes you will help her through this year and possibly the years to come so she can complete her education and become an Accountant.</td>         </tr>
+        </tr>
+        <tr>
+          <td><img class="picFrame"  src="img/sponsorChild2.jpg" /></td>
+          <td>Firdawsi is 15 years old. She is an orphan and lives with her grandmother. We started helping Firdawsi in October, a month after the school year had started. One of our volunteers found her crying because all of her friends were in school and she wasn’t. In most village families, a girl’s education is not a priority. She is now in Form 2 thanks to those who donated last year. We hope you will help us keep her in school this year also.</td>         </tr>
+        </tr>
+        <tr>
+          <td><img class="picFrame"  src="img/hassan_adulia.jpg" /></td>
+          <td>Hassan Adulia: 12 years, class 5. Guardian: grandmother. Occupation: Farming</td>
+        </tr>
+        <tr>
+          <td><img class="picFrame"  src="img/boris_wuwi.jpg" /></td>
+          <td>Wuwih Boris Bigah: 13 years, Form 1. Guardian: Auntie. Occupation: Farming</td>
+        </tr>
+        <tr>
+          <td><img class="picFrame"  src="img/phungeh_favour.jpg" /></td>
+          <td>Phungeh Favour: 4 years, class 2. Guardian: mother. Occupation: PTA (PTAs makes less than $30 a month in the villages)</td>
+        </tr>
+        <tr>
+          <td><img class="picFrame"  src="img/maqondo_chia.jpg" /></td>
+          <td>Maqondo Chia: 10 years, class 4. Guardian: mother. Occupation: Farming</td>
+        </tr>
+        <tr>
+          <td><img class="picFrame"  src="img/magmi_zita.jpg" /></td>
+          <td>Magmi Zita: 9 years, class 4. Guardian: sister. Occupation: Farming</td>
+        </tr>
+      </table>
+      <br /><br />
+    </div>  
+    <div class="mission2 clearfix">
+      <div class="fancyalertdiv">
+        <h3><a class='fancyalertbutton button fab-button2' href="#inline_content2">MORE KIDS IN NEED OF YOUR HELP</a></h3>
+        <br>
+      
+            <div class="fancyalert fab2" style='display:none'>
+              <div class="fancyalertclose">&nbsp;</div>
 
-              <div class="fancyalertdiv">
-                <h3><a class='fancyalertbutton button fab-button2' href="#inline_content2">MORE KIDS IN NEED OF YOUR HELP</a></h3>
-                <br>
-              
-                    <div class="fancyalert fab2" style='display:none'>
-                      <div class="fancyalertclose">&nbsp;</div>
-
-                        <table class="sponsorChildTable">
-                          <tr>
-                            <td><img class="picFrame"  src="img/umaru_sanda.jpg" /></td>
-                            <td><img class="picFrame"  src="img/silas_kuwongma.jpg" /></td> 
-                            <td><img class="picFrame"  src="img/nuru_sedik.jpg" /></td>
-                          </tr>
-                          <tr>
-                            <td>Umaru Sanda</td>
-                            <td>Silas Kuwongma</td>   
-                            <td>Nuru Sedik</td>
-                          </tr>
-                          <tr>
-                            <td><img class="picFrame"  src="img/miramu_muhammed.jpg" /></td>
-                            <td><img class="picFrame"  src="img/husinei_usamn.jpg" /></td>
-                            <td><img class="picFrame"  src="img/hassan_abdula.jpg" /></td>
-                          </tr>
-                          <tr>    
-                            <td>Miramu Muhammed</td>
-                            <td>Husinei Usamn</td>
-                            <td>Hassan Abdula</td>
-                          </tr>
-                          <tr>
-                            <td><img class="picFrame"  src="img/daouda_usman.jpg" /></td>
-                            <td><img class="picFrame"  src="img/binta_shibu.jpg" /></td>
-                            <td><img class="picFrame"  src="img/anu_pauline.jpg" /></td>
-                          </tr>
-                          <tr>
-                            <td>Daouda Usman</td>
-                            <td>Binta Shibu</td>
-                            <td>Anu Pauline </td>
-                          </tr>
-                          <tr>
-                            <td><img class="picFrame"  src="img/adula_usman.jpg" /></td>
-                            <td><img class="picFrame"  src="img/abubakou_manu.jpg" /></td>
-                            <td><img class="picFrame"  src="img/abubak_manu.jpg" /></td>
-                            
-                          </tr>
-                          <tr>
-                            <td>Adula Usman</td>
-                            <td>Abubakou Manu</td>
-                            <td>Abubak Manu</td>
-                          </tr>
-                          <tr>
-                            <td><img class="picFrame"  src="img/abdu_amadou.jpg" /></td>
-                            <td><img class="picFrame"  src="img/usmara_usman.jpg" /></td>
-                            <td><img class="picFrame"  src="img/ibrahim_hassan.jpg" /></td>
-                          </tr>
-                          <tr>
-                            <td>Abdu Amadou</td>
-                            <td>Usmara Usman </td>
-                            <td>Ibrahim Hassan</td>
-                          </tr>
-                          <tr>
-                            <td><img class="picFrame"  src="img/abubak_sedi.jpg" /></td>
-                            <td><img class="picFrame"  src="img/binta_shabou.jpg" /></td>
-                            <td><img class="picFrame"  src="img/yeileh_lo_ra.jpg" /></td>
-                          </tr>
-                          <tr>
-                            <td>Abubak Sedi</td>
-                            <td>Binta Shabou</td>
-                            <td>Yeileh Lo ra</td>
-                          </tr>
-                          <tr>
-                            <td><img class="picFrame"  src="img/yawuba_issa.jpg" /></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>Yawuba Issa</td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          
-                        </table>
-                    </div>
-
-                </div>
+                <table class="sponsorChildTable">
+                  <tr>
+                    <td><img class="picFrame"  src="img/umaru_sanda.jpg" /></td>
+                    <td><img class="picFrame"  src="img/silas_kuwongma.jpg" /></td> 
+                    <td><img class="picFrame"  src="img/nuru_sedik.jpg" /></td>
+                  </tr>
+                  <tr>
+                    <td>Umaru Sanda</td>
+                    <td>Silas Kuwongma</td>   
+                    <td>Nuru Sedik</td>
+                  </tr>
+                  <tr>
+                    <td><img class="picFrame"  src="img/miramu_muhammed.jpg" /></td>
+                    <td><img class="picFrame"  src="img/husinei_usamn.jpg" /></td>
+                    <td><img class="picFrame"  src="img/hassan_abdula.jpg" /></td>
+                  </tr>
+                  <tr>    
+                    <td>Miramu Muhammed</td>
+                    <td>Husinei Usamn</td>
+                    <td>Hassan Abdula</td>
+                  </tr>
+                  <tr>
+                    <td><img class="picFrame"  src="img/daouda_usman.jpg" /></td>
+                    <td><img class="picFrame"  src="img/binta_shibu.jpg" /></td>
+                    <td><img class="picFrame"  src="img/anu_pauline.jpg" /></td>
+                  </tr>
+                  <tr>
+                    <td>Daouda Usman</td>
+                    <td>Binta Shibu</td>
+                    <td>Anu Pauline </td>
+                  </tr>
+                  <tr>
+                    <td><img class="picFrame"  src="img/adula_usman.jpg" /></td>
+                    <td><img class="picFrame"  src="img/abubakou_manu.jpg" /></td>
+                    <td><img class="picFrame"  src="img/abubak_manu.jpg" /></td>
                     
+                  </tr>
+                  <tr>
+                    <td>Adula Usman</td>
+                    <td>Abubakou Manu</td>
+                    <td>Abubak Manu</td>
+                  </tr>
+                  <tr>
+                    <td><img class="picFrame"  src="img/abdu_amadou.jpg" /></td>
+                    <td><img class="picFrame"  src="img/usmara_usman.jpg" /></td>
+                    <td><img class="picFrame"  src="img/ibrahim_hassan.jpg" /></td>
+                  </tr>
+                  <tr>
+                    <td>Abdu Amadou</td>
+                    <td>Usmara Usman </td>
+                    <td>Ibrahim Hassan</td>
+                  </tr>
+                  <tr>
+                    <td><img class="picFrame"  src="img/abubak_sedi.jpg" /></td>
+                    <td><img class="picFrame"  src="img/binta_shabou.jpg" /></td>
+                    <td><img class="picFrame"  src="img/yeileh_lo_ra.jpg" /></td>
+                  </tr>
+                  <tr>
+                    <td>Abubak Sedi</td>
+                    <td>Binta Shabou</td>
+                    <td>Yeileh Lo ra</td>
+                  </tr>
+                  <tr>
+                    <td><img class="picFrame"  src="img/yawuba_issa.jpg" /></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Yawuba Issa</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  
+                </table>
             </div>
-            
 
-              <div class="mission clearfix">
-                <h6>The fate of a student in Babanki Tungo</h6>
-                <p>An average, a family in my village makes less than $1 a day. Most households have to save for no less than three months to have $10. Say the harvest was good and they saved $20, they will have to spread this around. For instance: 5-10 notebooks (elementary school), a pair of uniform, a pen or pencil then use the rest of the year to try and make money for school fees ( $30 or more depending on the school). Some schools allow parents to pay the school fee in two or three installments but if they do not finish paying by February-March, the kid is sent home. After this has happened to a student a few times, most of them get frustrated and drop out thus ending their education. Other reasons kids drop out is because of a handicap, like the story of Miriamu born with no arms or the story of Ngong Jespa and Shebom Solange from an accident. It is amazing that these kids keep striving to achieve an education. They deserved your help. Please visit our website and click on the Donate button to help out these kids or Sponsor a Child from our list. Your help of any kind is greatly appreciated.</p>         <br /><br /><br />
-              </div>
-              <div class="thinBox">
-                <p class="smallText">I love pictures so I will share a little of what I see. When I look into the eyes of these kids I see myself years ago in my little village that was less than 300 people at the time. I was one of the few fortunate kids who knew they were going to go to secondary school (the next step after elementary school). I had dreams for when I was done with secondary school but I didn’t have much hope these dreams will come to pass. Out of my class of about 51 (from my village and surrounding villages), less than 10 of us went to secondary school and about five of us went to high school. Out of these five three went and completed college not including me. (You’ve got to make a donation to find out why I didn’t:))</p>
-                <p class="smallText indentList">- Ruth Akumbu</p>
-              </div>
-            <h5 class="leftMargin">Sponsorship chart</h5>
-            <table class="sponsorCostTable colColor2">
-              <tr><th class="colColor" colspan="5">Elementary School Class 1-6</th></tr>
-              <tr><td>Monthly</td>
-                <td>Quarterly</td>
-                <td>Bi-Yearly*</td>
-                <td>Yearly*</td>
-                <td>One Time</td>
-              </tr>
-              <tr><td>$25</td>
-                <td>$75</td>
-                <td>$150</td>
-                <td>$300</td>
-                <td>$300</td>
-              </tr> 
-            </table>
-            <table class="sponsorCostTable colColor2">
-              <tr><th class="colColor" colspan="5">Secondary School Form 1-5 (4years for French student)</th></tr>
-              <tr><td>Monthly</td>
-                <td>Quarterly</td>
-                <td>Bi-Yearly*</td>
-                <td>Yearly*</td>
-                <td>One Time</td>
-              </tr>
-              <tr><td>$35</td>
-                <td>$105</td>
-                <td>$210</td>
-                <td>$420</td>
-                <td>$420</td>
-              </tr> 
-            </table>
-            <table class="sponsorCostTable colColor2">
-              <tr><th class="colColor" colspan="5">High School: Lower sixth, Upper sixth (3years for French Students)</th></tr>
-              <tr><td>Monthly</td>
-                <td>Quarterly</td>
-                <td>Bi-Yearly*</td>
-                <td>Yearly*</td>
-                <td>One Time</td>
-              </tr>
-              <tr><td>$50</td>
-                <td>$150</td>
-                <td>$300</td>
-                <td>$600</td>
-                <td>$600</td>
-              </tr> 
-            </table>
-            <table class="sponsorCostTable colColor2">
-              <tr><th class="colColor" colspan="5">University or College: Years 1-3</th></tr>
-              <tr><td>Monthly</td>
-                <td>Quarterly</td>
-                <td>Bi-Yearly*</td>
-                <td>Yearly*</td>
-                <td>One Time</td>
-              </tr>
-              <tr><td>$150</td>
-                <td>$400</td>
-                <td>$900</td>
-                <td>$1800</td>
-                <td>$1800</td>
-              </tr> 
-            </table>
-            <article>
-              <div class="thinBox">
-                <p class="smallText">* Our Bi yearly and yearly donations are most preferred but.</p>
-                <p class="smallText">* Our main focus is making sure the kid&apos;s school fees and books are paid for. Uniforms, shoes and other needs are secondary.</p>
-                <p class="smallText">* At the high school level, we screen for Youth and Young Adults that take initiative. We do not pay for housing or other needs unless donors choses to. We hope they will use their breaks to find something to do that will earn them a little money for other needs. </p>
-                <p class="smallText">* A small % of all donations will be used for operations cost. If there is any money left over at the end of the school year, it will be used to help other kids or other areas of accordance with our exempt purpose.</p>
-              </div>
-            </article>
-            <div class="mission2">
-              <h5>Here are other ways you can help our kids.</h5>
-              <h4>Clothing for Kids</h4>
-              <table>
-                <tr>
-                  <td width="300">
-                    <p class="brightText">Elementary School</p>
-                    <ul class="leftlist">
-                      <li>2 pairs of uniforms: $25.00</li>
-                      <li>2 pairs of school shoes: $20.00</li>
-                      <li>1 sweater: $15.00</li>
-                      <li>Socks and underwear: $10.00</li>
-                      <li>2 pairs of Sunday cloths: $30.00</li>
-                      <li>1 pair of dress shoes: $15.00</li>
-                      <li>*****$115.00/every other year</li>
-                    </ul>
-                  </td>
-                  <td>
-                    <p class="brightText">Secondary School</p>
-                    <ul class="leftlist">
-                      <li>2 pairs of uniforms: $50.00</li>
-                      <li>2 pairs of school shoes: $25.00</li>
-                      <li>A sweater: $15.00</li>
-                      <li>Socks and underwear: $10.00</li>
-                      <li>2 pairs of Sunday cloths: $35.00</li>
-                      <li>1 pair of dress shoes: $15.00</li>
-                      <li>*****$150.00/every other year</li>
-                    </ul>
-                  </td>
-                </tr>
-              </table>
-              <div class="thinBox">
-                <p class="smallText">* They might grow out of these items within a year or some items might cost more depending on the build of the kid. In case of the later, we will adjust the number of items.</p>
-                <p class="smallText">* If you want to sponsor a single item please indicate which in the Donation box.</p>
-                <p class="smallText">* Please note that our priority is to have the kids on our sponsorship list in School. If need be we will use funds to keep a child in school instead.</p>
-              </div>
-              <h4>Animals and Trade</h4>
-              <p>When we were growing up, my mom and dad always had us involve in some kind of trade or raising animals. We raised pigs, chickens, goat, and cow. This was not necessary to cover our school needs but to teach us to earn a living and be responsible for something. We girls also sold peanuts and donuts (poffpoff or gateau) during the summer and my brothers raised pigs and sold wood. Sometimes we made enough money to help out at the beginning of the school year (in the case of the animals, after a few years). So, I like the idea of giving kids an animal to take care of or some kind of trade where they can learn to earn money and be responsible for something.</p>
-              <p>If you will like to give one of our kids this opportunity, here are some options:</p>
+        </div>
+    </div>
+    <div class="mission2 clearfix">
+        <h6>The fate of a student in Babanki Tungo</h6>
+        <p>An average, a family in my village makes less than $1 a day. Most households have to save for no less than three months to have $10. Say the harvest was good and they saved $20, they will have to spread this around. For instance: 5-10 notebooks (elementary school), a pair of uniform, a pen or pencil then use the rest of the year to try and make money for school fees ( $30 or more depending on the school). Some schools allow parents to pay the school fee in two or three installments but if they do not finish paying by February-March, the kid is sent home. After this has happened to a student a few times, most of them get frustrated and drop out thus ending their education. Other reasons kids drop out is because of a handicap, like the story of Miriamu born with no arms or the story of Ngong Jespa and Shebom Solange from an accident. It is amazing that these kids keep striving to achieve an education. They deserved your help. Please visit our website and click on the Donate button to help out these kids or Sponsor a Child from our list. Your help of any kind is greatly appreciated.</p>         <br /><br /><br />
+      <div class="thinBox">
+        <p class="smallText">I love pictures so I will share a little of what I see. When I look into the eyes of these kids I see myself years ago in my little village that was less than 300 people at the time. I was one of the few fortunate kids who knew they were going to go to secondary school (the next step after elementary school). I had dreams for when I was done with secondary school but I didn’t have much hope these dreams will come to pass. Out of my class of about 51 (from my village and surrounding villages), less than 10 of us went to secondary school and about five of us went to high school. Out of these five three went and completed college not including me. (You’ve got to make a donation to find out why I didn’t:))</p>
+        <p class="smallText indentList">- Ruth Akumbu</p>
+      </div>
+      <h5 class="leftMargin">Sponsorship chart</h5>
+      <table class="sponsorCostTable colColor2">
+        <tr><th class="colColor" colspan="5">Elementary School Class 1-6</th></tr>
+        <tr><td>Monthly</td>
+          <td>Quarterly</td>
+          <td>Bi-Yearly*</td>
+          <td>Yearly*</td>
+          <td>One Time</td>
+        </tr>
+        <tr><td>$25</td>
+          <td>$75</td>
+          <td>$150</td>
+          <td>$300</td>
+          <td>$300</td>
+        </tr> 
+      </table>
+      <table class="sponsorCostTable colColor2">
+        <tr><th class="colColor" colspan="5">Secondary School Form 1-5 (4years for French student)</th></tr>
+        <tr><td>Monthly</td>
+          <td>Quarterly</td>
+          <td>Bi-Yearly*</td>
+          <td>Yearly*</td>
+          <td>One Time</td>
+        </tr>
+        <tr><td>$35</td>
+          <td>$105</td>
+          <td>$210</td>
+          <td>$420</td>
+          <td>$420</td>
+        </tr> 
+      </table>
+      <table class="sponsorCostTable colColor2">
+        <tr><th class="colColor" colspan="5">High School: Lower sixth, Upper sixth (3years for French Students)</th></tr>
+        <tr><td>Monthly</td>
+          <td>Quarterly</td>
+          <td>Bi-Yearly*</td>
+          <td>Yearly*</td>
+          <td>One Time</td>
+        </tr>
+        <tr><td>$50</td>
+          <td>$150</td>
+          <td>$300</td>
+          <td>$600</td>
+          <td>$600</td>
+        </tr> 
+      </table>
+      <table class="sponsorCostTable colColor2">
+        <tr><th class="colColor" colspan="5">University or College: Years 1-3</th></tr>
+        <tr><td>Monthly</td>
+          <td>Quarterly</td>
+          <td>Bi-Yearly*</td>
+          <td>Yearly*</td>
+          <td>One Time</td>
+        </tr>
+        <tr><td>$150</td>
+          <td>$400</td>
+          <td>$900</td>
+          <td>$1800</td>
+          <td>$1800</td>
+        </tr> 
+      </table>
+      <article>
+        <div class="thinBox">
+          <p class="smallText">* Our Bi yearly and yearly donations are most preferred but.</p>
+          <p class="smallText">* Our main focus is making sure the kid&apos;s school fees and books are paid for. Uniforms, shoes and other needs are secondary.</p>
+          <p class="smallText">* At the high school level, we screen for Youth and Young Adults that take initiative. We do not pay for housing or other needs unless donors choses to. We hope they will use their breaks to find something to do that will earn them a little money for other needs. </p>
+          <p class="smallText">* A small % of all donations will be used for operations cost. If there is any money left over at the end of the school year, it will be used to help other kids or other areas of accordance with our exempt purpose.</p>
+        </div>
+      </article>
+      </div>
+      <div class="mission2 clearfix">
+        <h5>Here are other ways you can help our kids.</h5>
+        <h4>Clothing for Kids</h4>
+        <table>
+          <tr>
+            <td width="300">
+              <p class="brightText">Elementary School</p>
               <ul class="leftlist">
-                <li>2 Goats: $100.00</li>
-                <li> 2 Pigs: $120.00</li>
-                <li>1 cow: $300.00</li>
+                <li>2 pairs of uniforms: $25.00</li>
+                <li>2 pairs of school shoes: $20.00</li>
+                <li>1 sweater: $15.00</li>
+                <li>Socks and underwear: $10.00</li>
+                <li>2 pairs of Sunday cloths: $30.00</li>
+                <li>1 pair of dress shoes: $15.00</li>
+                <li>*****$115.00/every other year</li>
               </ul>
-              <p>Click on our <a href="donate.php"><b>Donation</b></a> link to make a donation. Please specify which animal and the kid (if any) you are interested in giving this opportunity to. </p>
-                
-            </div>
-
+            </td>
+            <td>
+              <p class="brightText">Secondary School</p>
+              <ul class="leftlist">
+                <li>2 pairs of uniforms: $50.00</li>
+                <li>2 pairs of school shoes: $25.00</li>
+                <li>A sweater: $15.00</li>
+                <li>Socks and underwear: $10.00</li>
+                <li>2 pairs of Sunday cloths: $35.00</li>
+                <li>1 pair of dress shoes: $15.00</li>
+                <li>*****$150.00/every other year</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+        <div class="thinBox">
+          <p class="smallText">* They might grow out of these items within a year or some items might cost more depending on the build of the kid. In case of the later, we will adjust the number of items.</p>
+          <p class="smallText">* If you want to sponsor a single item please indicate which in the Donation box.</p>
+          <p class="smallText">* Please note that our priority is to have the kids on our sponsorship list in School. If need be we will use funds to keep a child in school instead.</p>
+        </div>
+        <h4>Animals and Trade</h4>
+        <p>When we were growing up, my mom and dad always had us involve in some kind of trade or raising animals. We raised pigs, chickens, goat, and cow. This was not necessary to cover our school needs but to teach us to earn a living and be responsible for something. We girls also sold peanuts and donuts (poffpoff or gateau) during the summer and my brothers raised pigs and sold wood. Sometimes we made enough money to help out at the beginning of the school year (in the case of the animals, after a few years). So, I like the idea of giving kids an animal to take care of or some kind of trade where they can learn to earn money and be responsible for something.</p>
+        <p>If you will like to give one of our kids this opportunity, here are some options:</p>
+        <ul class="leftlist">
+          <li>2 Goats: $100.00</li>
+          <li> 2 Pigs: $120.00</li>
+          <li>1 cow: $300.00</li>
+        </ul>
+        <p>Click on our <a href="donate.php"><b>Donation</b></a> link to make a donation. Please specify which animal and the kid (if any) you are interested in giving this opportunity to. </p>
+      </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="sectionB">
-      <div class="mission2">
         <h4>Clean Water</h4>
         <iframe style="float:right;" class="iframeClass" width="420" height="315" src="http://www.youtube.com/embed/RbCtZTye0T8" frameborder="0" allowfullscreen></iframe>
         <p>Most third world countries do not have clean water sources, causing illness and untimely death. It is important that communities be taught proper techniques that will help provide clean water or given equipment and financial support that will enable sustainable clean water sources. We believe that every school should have a source of clean water. Every child deserves to be disease free and if they cannot get clean water at home let them get a chance to have it at school. They can take some home to their family so the rest of their family can have some clean water to drink as well.  This saves the child from having to walk additional miles to get clean water after walking to and back from school.</p>
@@ -656,12 +669,9 @@
         <p>Right now our sports program takes place in Sabga- Cameroon and also here in Southern California with Immigrant Youths from across Africa and South America.  In Cameroon, we organize Youth Sports Activities to give the kids in the village an opportunity to earn some school books and fees while doing something fun. This program usually cost $1000 and up.  Contact us if you will like to Sponsor an activity in a village in Cameroon. We can decide the Village or You can.</p>
         <br />
         <p> It is commonly said that, “work without play makes Jack a dull boy”. It is in this spirit that we try to incorporate sports into our educational program. </p>
-        <div class="missionBottomBorder"></div>
-      </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="sectionC">
-      <div class="mission">
         <img src="img/programsPic2.jpg" class="picFrame rightFloat topMargin" />
         <h6>Youth activities And Book Drive</h6>
         <p>This is a yearly project we have sponsored for over 10 years to encourage, motivate and support kids and their parents right before the school year. We host games and other activities and at the end give all participants note books, pens, pencils and cash prices that will go towards their education. Sometime the parents participate and take home prices for their young kids who are not able to participate in the games. Check out our Media link for videos. Click on the donation button to make a <a href="donate.php" class="button">donation</a> Please specify Book Drive in the comment area.</p>
@@ -669,18 +679,13 @@
       </div>
       <div class="thinBox">
         <p class="smallText textCenter">Plant A Seed has the ultimate authority to use contributions made to us and will use the funds at our discretion for the purposes consistent with the exempt purpose.</p>
-      </div>
     </script>
 
-    <script type="text/x-handlebars" data-template-name="sectionD">
-      <section>
-        <h1>Section D</h1>
-        {{lorem type=paragraph amount=4}}
-      </section>
-    </script>
+
+
+
 
     <script type="text/x-handlebars" data-template-name="communityA">
-        <div id="communityLink10" class="internalLink">&nbsp;</div>
         <h4>March Newsletter</h4>
         <p class="date">Thursday, March 7, 2013</p>
         <br />
@@ -781,7 +786,6 @@ Thank you to everyone who contributed and helped to spread the word!!</p>
         <p>Please consider supporting Plant A Seed on a monthly basis. There is always a kid that needs help and we do not have enough funds. In addition to supporting our projects, we could use a small amount, at your discretion, for helping with administrative costs such as fillings, fundraising and other office related needs.</p>
       </div>
       <div class="mission2">
-        <div id="communityLink8" class="internalLink">&nbsp;</div>
         <h4>September Newsletter</h4>
         <p class="date">Monday, September 3, 2012</p>
         <br />
@@ -905,7 +909,6 @@ Thank you to everyone who contributed and helped to spread the word!!</p>
     </script>
 
     <script type="text/x-handlebars" data-template-name="communityE">
-      <div id="communityLink1" class="internalLink">&nbsp;</div>
       <h4>June Newsletter</h4>
       <p class="date">Friday, June 1, 2012</p>
       <br />
@@ -957,7 +960,6 @@ Thank you to everyone who contributed and helped to spread the word!!</p>
     </script>
 
      <script type="text/x-handlebars" data-template-name="communityC">
-        <div id="communityLink8" class="internalLink">&nbsp;</div>
           <h4>September Newsletter</h4>
           <p class="date">Monday, September 3, 2012</p>
           <br />
@@ -1029,7 +1031,6 @@ Thank you to everyone who contributed and helped to spread the word!!</p>
       </br>
       <h2>Activites</h2>
       <div class="mission2">
-        <div id="communityLink2" class="internalLink">&nbsp;</div>
         <h4>YBFC Soccer Team February Update</h4>
         <p class="date">Friday, March 2, 2012</p>
         <p>As was promised last month, a monthly report on the status of the team will be provided every month. February has been a pretty good month for YBFC and we hope that March will carry the same goodness. We ended the regular season of our first season in the top flight unbeaten.  We are currently in the knockout phase where under hard struggle, we made it past the quarterfinal stage. We are poised to take on to the semifinals where we left off last year and hope to get past that into the finals and by the grace of the Almighty and our hard work, win the championship.</p>
@@ -1129,7 +1130,6 @@ Thank you to everyone who contributed and helped to spread the word!!</p>
         <div class="missionBottomBorder"></div>
       </div>
       <div class="mission2">
-        <div id="communityLink5" class="internalLink">&nbsp;</div>
         <h4>PLANT A SEED YOUTH ACTIVITIES 2011</h4>
         <p class="date">Friday, July 22, 2011</p>
         <p>Plant A Seed Youth Event started on July 20th, 2011 in Sabga-Babanki Tungu and will run for the the next two weeks.  Kids in the village will participate in games (especially cross country and soccer), workshops, and community service. At the end of the event, the winners will be given financial aid and supplies that go towards their education.</p>
@@ -1150,7 +1150,6 @@ Thank you to everyone who contributed and helped to spread the word!!</p>
         <div class="missionBottomBorder"></div>
       </div>
       <div class="mission2">
-        <div id="communityLink6" class="internalLink">&nbsp;</div>
         <h5>&quot;If you will like to help us host, organize, plan events or if you have an event idea, email us via <a href="contact.php">Contact Page</a> or <a href="mailto:planta_seed@yahoo.com">planta_seed@yahoo.com&quote;</a></h5> 
         <p class="smallText indentList"></p>
         <div class="missionBottomBorder"></div>
@@ -1171,15 +1170,337 @@ Thank you to everyone who contributed and helped to spread the word!!</p>
      </script>
 
      <script type="text/x-handlebars" data-template-name="about">
+     <div class="blackBox">
+      <h5 class="whiteText">Our Mission:</h5>
+      <p class="whiteText">To plant seeds of hope, change and opportunity in schools, individuals and communities in Cameroon and around the world through <b>education</b>, <b>sports</b>, and <b>clean water</b>.</p>
+     </div>
+      <div class="mission2">
+        <img src="img/aboutPic1.jpg" class="picFrame rightFloat topMargin" />
+        <h4>What We Do..</h4>
+        <ul class="indentList">
+          <li>Our current efforts is focused on Cameroon, Africa. Through fundraising events, activities and outside support, Plant a Seed provides financial support for education, sports and community development, working directly with schools, communities and individuals.</li>
+          <li>At present, there is a large need for school fees and/or Parent-Teacher Association fees. Admission to school in Cameroon is contingent upon the ability to pay these fees, especially in the secondary schools. Most children and their families are unable to afford these fees to go to school or learn a trade. When they do managed to come up with the fees, they can barely afford the textbooks, exercise books, pens, uniforms, shoes that they need to successfully go through school. As a result, they are left without the means to better themselves, their family or their community.</li>
+          <li>In order to ensure quality control, Plant A Seed provides donations only to schools, individuals and communities who have personally written and/or have asked for assistance. Charitable distribution is overseen personally by Ruth Akumbu. Those who donate will receive proof of their donation’s impact from the children, school or community it benefits.</li> 
+        </ul>
+      </div>
+      <div class="mission2">
+        <img src="img/aboutPic2.jpg" class="picFrame rightFloat topMargin" />
+        <h4>How we started...</h4>
+        <p>In 2001, friends, colleagues and I created the Seek Ye Multipurpose Group in our home, Cameroon, Africa. Our grass roots mission was to provide: </p>
+        <ul class="indentList">
+          <li>Financial support of kids in less-fortunate communities</li>
+          <li>Outreach and exposure to subjects such as clean water, AIDS, and education</li>
+          <li>Sponsored sporting events for young people in communities and schools</li>
+          <li>Financial, educational and material support of women, particularly single mothers and uneducated/under-educated children in learning a trade or business to better their lives and their community. </li> 
+        </ul>
+        <p>Working within the heart of communities and their infrastructure, we’ve created a force of over 4,000 friends – interested in bettering our communities and ourselves.  As a result of these efforts, Seek Ye grew into the Plant A Seed Foundation in 2010, a bi-continental organization in the United States and Cameroon. Combining the resources of both continents, we continue to plant seeds of hope and knowledge to grow strong communities in our home Cameroon and beyond.</p>
+        <p class="smallText italic indentList"> - Ruth Akumbu, Founder</p>
+      </div>
+      <div class="mission2">
+          <h4>meet the founder</h4>
+          <div style="padding-left:2%;">
+            <p class="brightText">Ruth Akumbu</p>
+            <p> Ruth V. Akumbu was born in Bamenda, the N.W. Province of Cameroon in 1977. She left her parents at the age of 13 years to live with her uncle in Yaoundé, eight hours away so she could attend secondary school (junior high and high school). She received her high school certificate seven years later. She also had the privilege of learning French as Yaoundé is in the French-speaking zone of Cameroon. In 2001, she started a non-profit organization called, Seek Ye Multipurpose Group. Her work with this group enabled her to come to the USA where she has been living since 2002 working and financing the group’s activities. She lived in Minnesota for 2 1/2 years but had to leave because of the cold weather and came to Los Angeles where she now works in the entertainment industry. In 2007, she started a production company called Dreams And Visions Entertainment.</p>
+          </div>
+          <br />
+          <div style="padding-left:2%;">
+            <ul class="picList">
+              <li><img class="thinPicFrame" src="img/ruth1.jpg"></li>
+              <li><img class="thinPicFrame" src="img/ruth2.jpg"></li>
+              <li><img class="thinPicFrame" src="img/ruth3.jpg"></li>
+            </ul>
+          </div>  
+          <div class="missionBottomBorder"></div>
+        </div>
+        <br />
+        <div class="noBorderBox">
+          <div class="staffBox">
+          </div>
+          <div class="mission">
+            <h4>Board Members</h4>
+            <img class="thinPicFrame" src="img/michael_theophilus.jpg" style="float:left"/>
+            <p><span class="brightText">Michael Theophilus - </span> Born in 1964 on the highlands of Bamenda Cameroon, Michael Theophilus believes that education is the key to overcoming poverty. On his return from the University in 1994, he observed that computers maintenance was absent in Cameroon. Computers were being shipped  to France for basic maintenance.  He founded Cameroon Association for computer Science and information Technology in 1995 and began training high school graduates in basic computer maintenance and upgrade. The program was a big success. In 2001, he was interviewed by the wife of the Dutch Consul and an article was written by his work in a Dutch Magazine. This lead to his accreditation as a member of the World Summit on the Information Society (WSIS) International Telecommunication Union Headquarters and Palace des Nations Geneva - Switzerland.</p>
+            <br /><br />
+            <p class="brightText2">Education</p>
+            <ul class="indentList">
+              <li>Colorado Technical University: Bachelor of Science –International Business/IT Security</li>
+              <li>Colorado Technical University: MBA -Technology Management. </li>
+              <li>Colorado Technical University Network+ (2010)</li>
+              <li>UNITEK College, Fremont, San Jose CA. CCIE Voice (Written) (2009)</li>
+              <li>Cisco Certified Voice Professional (CCVP) (2009</li>
+              <li>Cisco Certified Design Associate (CCDA) (2008) </li>
+              <li>Cisco Certified Network Associate (CCNA) (2008), A+, Network+ and Security+. (2007)</li>
+              <li>Additional Professional Information Technology Training certifications</li>
+            </ul>
+            <br />  
+            <br />        
+            <img class="thinPicFrame" src="img/catherine_achu_lamfu.jpg" style="float:left"/>
+            <p><span class="brightText">Catherine Achu Lamfu - </span> Catherine brings the following experiences to the Organization.</p>
+            <ul class="indentList" style="list-style-type:none">
+              <li>Extensive experience in education, including Headmistress of Covenant Baptist Primary School</li>
+              <li>Born and raised in Cameroon</li>
+              <li>Cameroon News and Publishing Agency (SOPECAM),</li>
+              <li>Activa Insurance Company</li>
+            </ul>
+          </br />
+          </div>
+          <div class="mission2">
+            <h4>Advisors</h4>
+            <img class="thinPicFrame" src="img/matthew_oquist.jpg" style="float:left"/>
+            <p><span class="brightText">matthew_oquist - </span> Matthew Oquist is the National Director of Development. contact at: </p>
+            <ul class="indentList" style="list-style-type:none">
+              <li>Kids Against Hunger</li>
+              <li> 5401 Boone Ave North</li>
+              <li>New Hope, MN 55427</li>
+              <li><a href="mailto:matt@kidsagainsthunger.org">matt@kidsagainsthunger.org</a></li>
+              <li><a href="mailto:www.kidsagainsthunger.org">www.kidsagainsthunger.org</a></li>
+            </ul>
+            <br /><br /><br />
+            <img class="thinPicFrame" src="img/Rashel_Mereness.jpg" style="float:left"/>
+            <p><span class="brightText">Rashel Mereness - </span> Rashel Mereness is an Attorney at Law at the The Production Law Firm</p>
+            <ul class="indentList" style="list-style-type:none">
+              <li><a href="mailto:info@productionlawfirm.com">info@productionlawfirm.com</a></li>
+              <li><a href="mailto:www.productionlawfirm.com">www.productionlawfirm.com </a></li>
+            </ul>
+          <br /><br /><br /><br /><br />
+          </div>
+          <div class="mission2">
+            <h4>Volunteers</h4>
+            <p><span class="brightText">Tim Evans - </span> Helps with up keep of our computers.</p>
+            <p><span class="brightText">Seth Barker - </span> Helps with our newsletters and marketing of Plant A Seed to his school.</p>
+            <p><span class="brightText">Benhan Tafla - </span> Helps with office administration.</p>
+          <br / ><br />
+          </div>
+          <div class="mission2">
+            <h4>Cameroon Staff:</h4>
+            <p><span class="brightText">Pauline Ndifon - </span><span class="brightText3"> Administrator - </span>Takes care of the office in Cameroon.</p>
+            <p><span class="brightText">Elvis Akumbu - </span><span class="brightText3"> Administrative Assistant - </span> Assists with field work.</p>
+          <br />
+          </div>
+          <div class="mission2">
+            <h4>You!</h4>
+            <p><span class="brightText">you too! - </span><span class="brightText3"> volunteer, advisor, or board member - </span>We are seeking volunteer staff and board members!  <a href="contact.html">Contact us</a> for more information.</p>
+          </div>  
+        </div>
      </script>
 
      <script type="text/x-handlebars" data-template-name="news">
+     <div class="blackBox">
+      <h5 class="whiteText">News & Media</h5>
+      <p class="whiteText">check out the latest projects through Plant a Seed. </p>
+     </div>
+      <div class="mission2">
+        <div id="newsLink1">&nbsp;</div>
+        <h4>We need clean water!</h4>
+        <br />
+        <div onclick="thevid=document.getElementById('thevideo'); thevid.style.display='block'; this.style.display='none'">
+          <img src="img/water_vid_cover_art.jpg" style="cursor:pointer" />
+        </div>
+        <div id="thevideo" style="display:none">
+          <iframe class="iframeClass" width="420" height="315" src="http://www.youtube.com/embed/RbCtZTye0T8" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p>So far we have raised a total of $940 of the $5000 needed. Please help us bring clean water to these kids.</p>
+      </div>
+      <div class="mission2">
+        <div id="newsLink1">&nbsp;</div>
+        <h4>Jespa Ngong</h4>
+        <br />
+            <iframe class="iframeClass"  width="420" height="315" src="http://www.youtube.com/embed/QhpvUrAIXow" frameborder="0" allowfullscreen></iframe>        <br />
+        <p>Jespa helping harvest vegetable with his good arm.</p>
+        <br />
+        <p>He was burned in a fire as an infant and now he's 12 years old. He hasn't been to a doctor since the accident happened. At the time of the accident, he didn't get any major surgery because he fell ill and then the mother had to return to the village. Other than his injuries, he's a pretty normal kid and the other kids are very nice to him now. While visiting him.</p>
+      </div>
+      <div class="mission">
+        <div id="newsLink1">&nbsp;</div>
+        <h4>Trip to Cameroon part 1 & 2</h4>
+        <br />
+        <iframe class="iframeClass" width="420" height="315" src="http://www.youtube.com/embed/i6mOOlevZh4" frameborder="0" allowfullscreen></iframe>
+        <iframe class="iframeClass" width="420" height="315" src="http://www.youtube.com/embed/dwgIXvy6lh8" frameborder="0" allowfullscreen></iframe>
+        <p>We hosted our first potluck party featuring Comedian Jerry Winn, DJ/Performer Jason Khera, and an amazing group of friends, food and drinks! Next event will be soon, Facebook event to follow!</p>
+        <br />
+        <p>Here is a little inside to why I (Ruth) for one care so much. While in school in Cameroon-Africa, we use to love the quote, "Give a man a fish; you have fed him for today. Teach a man to fish; and you have fed him for a lifetime". Our hope is that with your support, together we can give these kids the opportunity to learn how to fish for themselves down the road. The future of third world countries depends on it. </p>
+      </div>
+      <div class="mission2">
+        <div id="newsLink2">&nbsp;</div>
+        <h4>Video of the potluck:</h4>
+        <iframe class="iframeClass" width="560" height="315" src="http://www.youtube.com/embed/RJowEtMrybw" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="mission2">
+        <div id="newsLink3">&nbsp;</div>
+        <h4>Young Boys FC</h4>
+        <br />
+        <iframe class="iframeClass" width="420" height="315" src="http://www.youtube.com/embed/yUNWsid3DHo" frameborder="0" allowfullscreen></iframe>
+        <p>Young Boys FC. A group young men coming together through sports to help one another become better members of the community by encouraging education, good behavior and financial support when need be.</p>
+        <br />
+        <p>As was promised last month, a monthly report on the status of the team will be provided every month.
+        February has been a pretty good month for YBFC and we hope that March will carry the same goodness. We ended the regular season of our first season in the top flight unbeaten.  We are currently in the knockout phase where under hard struggle, we made it past the quarterfinal stage. We are poised to take on to the semifinals where we left off last year and hope to get past that into the finals and by the grace of the Almighty and our hard work, win the championship.</p>
+      </div>
+      <div class="mission2">
+        <div id="newsLink4">&nbsp;</div>
+        <h4>A short film by Ruth Akumbu:</h4>
+        <iframe class="iframeClass" width="560" height="315" src="http://www.youtube.com/embed/H92QWGqSlHY" frameborder="0" allowfullscreen></iframe>
+        <p>Eboneh is an African student who comes to the USA with noble intentions of returning to his country of origin and making a difference. These dreams are quickly challenged by problems at home.</p>  
+      </div>
      </script>
 
      <script type="text/x-handlebars" data-template-name="donate">
+     <div class="blackBox">
+      <h5 class="whiteText">Donations</h5>
+      <p class="whiteText">donations are key to allow Plant a Seed reach out to the Cameroon and African people.</p>
+     </div>
+        <div class="mission2">
+          <br />
+          <h2>Here is how you can help:</h2>
+
+          <ul class="indentList">
+            <h4>Support a child</h4>
+            
+              <li class="indentList">One time donation- $300 or more</li>
+              <li class="indentList">Long term sponsors- $25-50 monthly and pen pal with Child.</li>
+            
+            <h4>Clean Water Well: $5000</h4>
+            <li>ALFRED AND SARAH BILINGUAL ACADEMY - Sangmalima, South Region of Cameroon</li>
+
+            <h4>Summer youth activities</h4>
+            <li>$1000 or more needed by July 1st</li>
+            
+          <div class="missionBottomBorder"></div> 
+        </div>  
+        <div class="mission2">
+          <img src="img/programsPic1.jpg" class="picFrame rightFloat topMargin" />
+          <img src="img/programsPic2.jpg" class="picFrame rightFloat topMargin" />
+          <img src="img/06.jpg" class="picFrame rightFloat topMargin" />
+          <h4>How to donate:</h4>
+          <br />
+          <h2>PayPal</h2>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="width:120px; height:50px; margin-top:30px;" >
+          <input type="hidden" name="cmd" value="_s-xclick">
+          <input type="hidden" name="hosted_button_id" value="5FLUW4NMKPLYL">
+          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+          </form>
+          <p><i>Please specify which project you are supporting.</i></p>
+          <br />
+          <h2>check</h2>
+          <p>Please make checks out to:</p>
+          <p><b>Plant A Seed, P. O Box 90102, Los Angeles, CA 90009</b></p>
+          <p><i>Please specify which project you are supporting.</i></p>
+          <br />
+          <h2>facebook</h2>
+          <br />
+          <div class="fb-like" style="width:120px; height:93px;" data-href="https://www.facebook.com/pages/Plant-A-Seed/190180901003258" data-send="false" data-width="450" data-show-faces="true"></div>
+        <div class="missionBottomBorder"></div> 
+        </div>  
+        <div class="mission">
+          <h4>Other donation options:</h4>
+          <p class="brightText2">1. Seeds of Opportunity in a box. Seeds of Change in a bag. Seeds of Hope in a jar. Change for change in a bottle.</p>
+          <p>The first thing I noticed in everyone&apos;s car when I just came to America was how much change was just lying around in cars. Next time you get into your car, check on the seats and floor in addition to where you usually put your change. You will be surprised that you have at least a dollar of change. $1 will buy at least one notebook and pen for a kid in Cameroon. So I figured you could plant a seed with your $1. All you need to do is get a box, a bag, a jar or bottle label it with one of the above titles or make your own title and when it is full, donate it to us.</p>
+          <br />
+          <p class="brightText2">2. Bake Sale. Garage Sale. </p>
+          <p>You can help raise funds by hosting a bake sale or a garage sale.</p>
+          <br />
+          <p class="brightText2">3. Sponsorship. Partnership</p>
+          <p>If your company will like to sponsor or partner with us on this project or any of our projects, please fill out our <a class="button" href="contact.php">contact form</a> or <a class="button" href="mailto:planta_seed@yahoo.com">email us.</a></p>
+        <div class="missionBottomBorder"></div> 
+        </div>
+        <div class="mission2">
+          <h4>Why Should You?</h4>
+          <br />
+          <table class="picsWithCaptions">
+            <tr>
+              <td><img class="thinPicFrame" src="img/bigPics2.jpg" /></td>
+              <td><img class="thinPicFrame" src="img/bigPics1.jpg" /></td>
+            </tr>
+            <tr>
+              <td><h5>Cameroon 2002</h5></td>
+              <td><h5>Cameroon 2012</h5></td>
+            </tr>
+          </table>  
+          <br />
+          <p>As many of you know, I left Cameroon in 2002 with a burning desire to help out these seven young girls among many other underprivileged in our communities. I look at these girls and my heart breaks into pieces. What have become of them? These were 12-15 year olds whose parents had no choice but to marry them off to the first suitor partly due to cultural aspects and partly because they could not afford to send them to secondary school.  I weep for these girls not only because I could not afford to support at minimum wage while sponsoring our yearly sports program but also because they like must underprivileged girls, got married and had babies before they turned 18. </p>
+          <br />
+          <p>Why does this particular situation bother me so much? I remember at the age of 9 a girl in my class was pulled out of school and married off to a rich man who already had many wives. Also, at the age of 13 while I was packing my bags to go to secondary schools, my dear cousin was being carried away kicking and screaming into a marriage she had no say in. She was about 15yrs old. The memory of that night still hunts me. I couldn’t help them then no matter how bad I wanted to. So when I got the opportunity, I starting thinking of ways I could change the faith of as many as there are in my community and surroundings. In ten years, I was only able to help a few stay in school and help one almost through secondary school until a suitor came by. She was able to graduate secondary school at the age of 18, giving her a fighting chance in life. Even though we lost touch, I know whatever little seed I planted made a difference in her life but I hurt for the rest of them.</p>        
+          <br />
+          <p>Now, look at the second picture above and see the little children in the photos. Some of these children belong to young girls like the girls in picture number one—girls who don’t have an opportunity, a chance, a real shot of making something of themselves. Many of these girls have never had someone tell them that they can be more. Now, look at the older kids in the picture. When I left Cameroon in 2002 they were the children I wanted so badly to help.  In this picture most of them are at the Plant A Seed Youth Activities not for themselves but for their children. Thus goes the vicious circle. Children who bear children who turn around and bear children without much hope for what the future holds—a future they didn’t get. What will they pass on to their children?  I pray that what breaks my heart will break yours…not only for the young girls but for all underprivileged kids. </p>
+          <br />
+          <p>Finally, picture a child, someone close to your heart. Now imagine him/her at 10 years of age. Now, imagine him/her 10yrs later. Ten years ago, I left Cameroon seeking for opportunities to help a generation of my friends’ and cousin’s kids from falling into the same dilemma as their mothers. Ten years into this journey, I am faced with the same dilemma but slightly different—it is not for my friends’ or cousin’s kids, but rather their grandkids. This time it cannot wait another 10 years. More so, it cannot wait one more month. Please join me and together we can break this circle.</p>
+          <br />      
+          <div class="missionBottomBorder"></div>
+        </div>
+      <div class="thinBox">
+        <p class="smallText textCenter">Plant A Seed has the ultimate authority to use contributions made to us and will use the funds at our discretion for the purposes consistent with the exempt purpose.</p>
+      </div>
      </script>
 
      <script type="text/x-handlebars" data-template-name="store">
+     <div class="blackBox">
+      <h5 class="whiteText">Store</h5>
+      <p class="whiteText">Check out the Plant a Seed gear at our store, and help support a great cause!</p>
+     </div>
+
+      <div class="mission2">
+        <img src="img/tshirt.jpg" class="picFrame rightFloat" />
+        <img src="img/tshirt2.jpg" class="picFrame rightFloat" />
+        <img src="img/tshirt3.jpg" class="picFrame rightFloat" />
+        <img src="img/tshirt4.jpg" class="picFrame rightFloat" />
+        <h4>T-shirts</h4>
+        <p>Own your Plant A Seed T-shirt or Young Boys FC T-shirt for a donation of only $15 or more. Please state which T-shirt and size you want in the donation box.  Your donations help provide books, school fees etc to kids in Cameroon and help us develop programs for immigrant youths predominantly from Africa living in SOCAL-USA. Donations are also tax deductible. Please save your receipt.</p>
+      </div>
+      <div class="mission2">
+        <h4>Online Store</h4>
+        <p>Check out our <a href="http://plantaseed.deco-charity.com/shop?pn=1" class="button">online store </a> for more Plant a Seed gear.  Thanks for your support!</p>
+      </div>
+      <div class="thinBox"><p class="textCenter">Make a donation of $100 or more and get a gift from Africa. Please state in the donation box that you will like a gift.</p>
+      </div>
+     </div>
+     </script>
+
+     <script type="text/x-handlebars" data-template-name="contact">
+       <div class="blackBox">
+      <h5 class="whiteText">Contact us</h5>
+      <p class="whiteText">thank you for your interest in Plant a Seed! please feel free to contact us at your convenience. </p>
+    </div>
+      <div id="colomn_container">
+        <div id="colomn_left">
+          <h5>email me:</h5>
+          <p><a href="mailto:planta_seed@yahoo.com">planta_seed@yahoo.com</a></p>
+          <h5>mail me:</h5>
+          <p>Plant A Seed</p>
+          <p>P.O Box 90102</p>
+          <p>Los Angeles, CA 90009</p>
+        </div>
+        <div id="colomn_right">
+            <iframe class="map" width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=436+West+Imperial+Ave.,+Ste.+7++El+Segundo,+CA++90245-2164&amp;aq=&amp;sll=34.031038,-118.201904&amp;sspn=0.440442,0.797195&amp;ie=UTF8&amp;hq=&amp;hnear=436+W+Imperial+Ave+%237,+El+Segundo,+California+90245&amp;ll=33.930518,-118.420618&amp;spn=0.220482,0.398598&amp;t=m&amp;z=12&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=436+West+Imperial+Ave.,+Ste.+7++El+Segundo,+CA++90245-2164&amp;aq=&amp;sll=34.031038,-118.201904&amp;sspn=0.440442,0.797195&amp;ie=UTF8&amp;hq=&amp;hnear=436+W+Imperial+Ave+%237,+El+Segundo,+California+90245&amp;ll=33.930518,-118.420618&amp;spn=0.220482,0.398598&amp;t=m&amp;z=12" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+            <div class="missionBottomBorder"></div>
+          </div>
+          <div class="mission2">
+            <h5>send me a quick message</h5>
+            <table id="contactFormTable">
+              <form name="contact"  method="POST" action="sendmail.php">
+                <tr>
+                  <td>Name </td>
+                  <td><input type="text" name="name" class="textfeild" autofocus ></td>
+                </tr> 
+                <tr>
+                  <td>Phone </td>
+                  <td><input type="number" name="number" class="textfeild"  autofocus></td>
+                </tr>
+                <tr>
+                  <td>Email </td>
+                  <td><input type="email" name="email" class="textfeild"  autofocus></td>
+                </tr>
+                <tr>
+                  <td>Comments </td>
+                  <td><textarea class="textarea" name="comments" cols="45" rows="10" autofocus>Enter Text here...</textarea></td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><button class="backButton" value="Send Me">Send</button></td>
+                </tr>
+              </form>
+            </table>  
+        </div> 
+      </div>
      </script>
 
 

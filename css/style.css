@@ -569,16 +569,7 @@ ol {
 section {
   width: 100%;
   background: url(../img/bg-pattern.png);
-  position: relative;
-  margin-bottom: 30px; }
-
-section:after {
-  content: "";
-  position: absolute;
-  background: url(../img/fade-white.png) repeat-x;
-  width: 100%;
-  height: 60px;
-  bottom: 0px; }
+  position: relative; }
 
 #section_header {
   height: 1px;
@@ -700,6 +691,26 @@ article {
   text-decoration: none; }
 
 /*programs*/
+.mission2 {
+  margin: 20px 0 20px 0;
+  padding: 15px; }
+
+.header_look {
+  font-size: 190%;
+  border-top: 1px solid #d7843a;
+  border-bottom: 1px solid #b25616;
+  box-shadow: 0 1px 0 #fd9d46 inset, 0 -1px 0 #e16f1f inset, 0 -1px 13px #999999;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#e39720), to(#cd5c11));
+  background: -moz-linear-gradient(top, #e39720, #cd5c11);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#e39720, endColorStr=#cd5c11);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#e39720, endColorStr=#cd5c11);
+  zoom: 1;
+  width: 100%;
+  text-align: center; }
+  .header_look h5 {
+    color: #a54f19;
+    text-shadow: 0 1px 0 #ff8a54; }
+
 .schoolList li {
   list-style-type: none;
   float: left; }
@@ -726,8 +737,8 @@ article {
   width: 240px;
   height: 240px;
   position: absolute;
-  top: -105px;
-  right: -40px;
+  top: 165px;
+  right: 50px;
   background-image: url(../img/drawRuler.png);
   background-repeat: no-repeat; }
 
@@ -735,8 +746,8 @@ article {
   width: 240px;
   height: 240px;
   position: absolute;
-  top: -140px;
-  left: -130px;
+  top: 250px;
+  left: -20px;
   background-image: url(../img/drawBook.png);
   background-repeat: no-repeat; }
 
@@ -751,11 +762,9 @@ article {
 
 /*contact*/
 #contactFormTable {
-  height: 400px;
+  width: 80%;
   padding: 20px;
-  background: #ccc;
-  border: 1px solid #999;
-  border-radius: 7px; }
+  background: #ccc; }
 
 #contactFormTable td {
   color: #546a8f;
@@ -779,7 +788,10 @@ footer {
   background: -moz-linear-gradient(top, #2f2f2f, #555555);
   -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#2f2f2f, endColorStr=#555555);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#2f2f2f, endColorStr=#555555);
-  zoom: 1; }
+  zoom: 1;
+  border-top: 1px solid #282828;
+  box-shadow: 0 1px 0 #888 inset;
+  padding: 10px 0 0 0; }
 
 #footer_social {
   width: 100%; }
@@ -793,26 +805,68 @@ footer {
   float: right;
   margin-right: 2%;
   border-right: 1px dashed #dfdfdf; }
+  #footer_list li {
+    padding-left: 10px;
+    distplay: inline;
+    list-style-type: none;
+    color: white;
+    text-align: right;
+    padding-right: 4px; }
+    #footer_list li:hover {
+      background: rgba(100, 100, 100, 0.3); }
+    #footer_list li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 85%; }
+      #footer_list li a:hover {
+        color: #c9520e; }
+  #footer_list li:last-child {
+    font-size: 70%;
+    line-height: 2.7; }
 
-#footer_list li {
-  padding-left: 10px;
-  distplay: inline;
+/******************/
+.np_container {
+  position: relative;
+  width: 100%; }
+  .np_container .np_view {
+    float: left;
+    width: 77%;
+    margin: 0 0 0 2%;
+    padding: 30px 0 0 0; }
+
+.nav-pills {
+  float: left;
+  width: 16%;
+  margin: 120px 20px 20px 20px;
   list-style-type: none;
-  color: white;
-  text-align: right;
-  padding-right: 4px; }
-
-#footer_list li:last-child {
-  font-size: 70%;
-  line-height: 2.7; }
-
-#footer_list li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 85%; }
-
-#footer_list li a:hover {
-  color: #546a8f; }
+  font-family: 'Gloria Hallelujah', cursive; }
+  .nav-pills li {
+    background: #df8c1d;
+    box-shadow: 0 1px 0 #e09a41 inset;
+    border-top: 1px solid #d9882d;
+    border-left: 1px solid #c07827;
+    border-bottom: 1px solid #dc8a2e;
+    padding: 5px;
+    position: relative;
+    border-radius: 11px 0px 0px 5px; }
+    .nav-pills li a {
+      color: #aa6a21;
+      text-shadow: 0 1px 0 #ffa338; }
+  .nav-pills li.active {
+    background: #ed9532; }
+  .nav-pills li.active a {
+    color: #7a4b25;
+    text-shadow: 0 1px 0 #ffb06c; }
+  .nav-pills li.active:before {
+    position: absolute;
+    content: "";
+    right: -45px;
+    top: -10px;
+    width: 0;
+    height: 0;
+    border-left: 45px solid #ed9532;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent; }
 
 /******************/
 .gxSealWidgetH1 {

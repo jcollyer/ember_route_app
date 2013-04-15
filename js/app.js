@@ -61,10 +61,10 @@ window.App = Ember.Application.create({
     isCommunity: stateFlag('community'),
     isItems: stateFlag('items'),
     isProgram: stateFlag('programs'),
-    isProgram: stateFlag('about'),
-    isProgram: stateFlag('news'),
-    isProgram: stateFlag('donate'),
-    isProgram: stateFlag('store'),
+    isAbout: stateFlag('about'),
+    isNews: stateFlag('news'),
+    isDonate: stateFlag('donate'),
+    isStore: stateFlag('store'),
     isContact: stateFlag('contact')
   }),
   ApplicationView: Ember.View.extend({
@@ -84,13 +84,13 @@ window.App = Ember.Application.create({
   }),
 
   CommunityController: Ember.Controller.extend({
-    isSectionA: stateFlag('sectionA'),
-    isSectionB: stateFlag('sectionB'),
-    isSectionC: stateFlag('sectionC'),
-    isSectionD: stateFlag('sectionD'),
-    isSectionD: stateFlag('sectionE'),
-    isSectionD: stateFlag('sectionF'),
-    isSectionD: stateFlag('sectionG')
+    isCommunityA: stateFlag('communityA'),
+    isCommunityB: stateFlag('communityB'),
+    isCommunityC: stateFlag('communityC'),
+    isCommunityD: stateFlag('communityD'),
+    isCommunityE: stateFlag('communityE'),
+    isCommunityF: stateFlag('communityF'),
+    isCommunityG: stateFlag('communityG')
   }),
 
   SectionsView: Ember.View.extend({
